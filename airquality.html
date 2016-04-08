@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link href="c3/c3.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="airquality.json"></script>
+    <title>New York Air Quality Measurements</title>
+</head>
+
+<body>
+    <h2>New York Air Quality Measurements</h2>
+    <div id="chart"></div>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="c3/c3.js"></script>
+    <script>
+      var chart = c3.generate({
+        data: {
+            x: 'x',
+            xFormat: '%d.%m.%Y',
+            columns: raw_data
+        },
+        bar: {
+            width: {
+                ratio: 0.85
+            }
+        },
+        axis: {
+            x: {
+                type: 'timeseries',
+                tick: {
+                    format: '%d-%m-%Y'
+                }
+            }
+        }
+      });
+    </script>
+</body>
+</html>
